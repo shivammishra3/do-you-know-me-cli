@@ -4,8 +4,8 @@ const chalk = require('chalk');
 var score = 0;
 
 var userName = readlineSync.question("Hi, What is your name? ");
-console.log(("Welcome ") + (userName.toUpperCase()));
-console.log(("Hey, ") + (userName.toUpperCase()) + " You know me right?\n" + "\nAnswer the below Questions and Let's see How well do you know me!\n");
+console.log(chalk.cyanBright("Welcome ") + chalk.red(userName.toUpperCase()));
+console.log(chalk.yellowBright("Hey, ") + chalk.red(userName.toUpperCase()) + " You know me right?\n" + "\nAnswer the below Questions and Let's see How well do you know me!\n");
 
 var highscore = [
   {
@@ -60,9 +60,9 @@ console.log("\nFinal Score is : ", score)
 if(score > highscore[0,1].score)
   {
     console.log("Congratulation on  beating the Highscore\n");
-    console.log(("-------------------------------------"));
-    console.log(("\n**Since you have beaten the highscore, send me a screenshot and I'll update the current Highscorer as you...** "));
-    console.log(("-------------------------------------"));
+    console.log(chalk.bold.yellow("-------------------------------------"));
+    console.log(chalk.red.italic("\n**Since you have beaten the highscore, send me a screenshot and I'll update the current Highscorer as you...** "));
+    console.log(chalk.bold.yellow("-------------------------------------"));
   } else {
-  console.log(("Sorry, You haven't beaten the Highscore, Refresh & Try Again\n"));
+  console.log(chalk.red("Sorry, You haven't beaten the Highscore, Refresh & Try Again\n"));
 }
